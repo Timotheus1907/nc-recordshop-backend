@@ -1,0 +1,6 @@
+@nc_recordshop_backend_HostAddress = http://localhost:5148
+
+GET {{nc_recordshop_backend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
