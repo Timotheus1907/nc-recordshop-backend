@@ -6,6 +6,7 @@ namespace nc_recordshop_backend.Service
     public interface IAlbumService
     {
         public List<Album> GetAlbums();
+        public Album GetAlbumById(int id);
     }
 
     public class AlbumService : IAlbumService
@@ -20,6 +21,11 @@ namespace nc_recordshop_backend.Service
         public List<Album> GetAlbums()
         {
             return _albumRepository.FetchAlbums();
+        }
+
+        public Album GetAlbumById(int id)
+        {
+            return _albumRepository.FetchAlbumById(id);
         }
     }
 }

@@ -5,6 +5,7 @@ namespace nc_recordshop_backend.Repository
     public interface IAlbumRepository
     {
         public List<Album> FetchAlbums();
+        public Album FetchAlbumById(int id);
     }
 
     public class AlbumRepository : IAlbumRepository
@@ -20,6 +21,11 @@ namespace nc_recordshop_backend.Repository
         public List<Album> FetchAlbums()
         {
             return _db.Albums.ToList();
+        }
+
+        public Album FetchAlbumById(int id)
+        {
+            return _db.Albums.FirstOrDefault(a => a.Id == id);
         }
     }
 }

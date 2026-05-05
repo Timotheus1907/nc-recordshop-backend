@@ -19,5 +19,10 @@ namespace nc_recordshop_backend.Controller
         {
             return Ok(_albumService.GetAlbums());
         }
+        [HttpGet("{id}")]
+        public IActionResult GetAlbumById(int id)
+        {
+            return Ok(_albumService.GetAlbumById(id));
+        }
     }
 }

@@ -100,5 +100,77 @@ namespace nc_recordshop_backend.Tests.ControllerTests
             Assert.That(actual, Is.TypeOf<OkObjectResult>());
             Assert.That(a.Value, Is.EquivalentTo(albums));
         }
+
+        [Test]
+        public void GetAlbumById_PosId_ReturnsOKAlbum()
+        {
+            DateOnly date1 = new DateOnly(1969, 9, 26);
+            List<string> tracks1 = new() { "Come Together", "Something", "Maxwell's Silver Hammer", "Oh! Darling", "Octopus's Garden" };
+            Album album1 = new();
+            album1.Quantity = 67;
+            album1.Name = "Abbey Road";
+            album1.Description = "The last album the Beatles ever recorded";
+            album1.Artist = "The Beatles";
+            album1.Genre = "Rock";
+            album1.ReleaseDate = date1;
+            album1.TrackList = tracks1;
+
+            int id = 1;
+
+
+            _albumServiceMock.Setup(a => a.GetAlbumById(id)).Returns(album1);
+
+            var actual = _albumController.GetAlbumById(id);
+
+            Assert.That(actual, Is.TypeOf<OkObjectResult>());
+
+            var a = actual as OkObjectResult;
+
+            Assert.That(a.Value, Is.EqualTo(album1));
+        }
+
+        [Test]
+        public void GetAlbumById_NegId_ReturnsBadReq()
+        {
+            DateOnly date1 = new DateOnly(1969, 9, 26);
+            List<string> tracks1 = new() { "Come Together", "Something", "Maxwell's Silver Hammer", "Oh! Darling", "Octopus's Garden" };
+            Album album1 = new();
+            album1.Quantity = 67;
+            album1.Name = "Abbey Road";
+            album1.Description = "The last album the Beatles ever recorded";
+            album1.Artist = "The Beatles";
+            album1.Genre = "Rock";
+            album1.ReleaseDate = date1;
+            album1.TrackList = tracks1;
+
+            int id = -5;
+
+            _albumServiceMock.Setup(a => a.GetAlbumById(id)).Returns((Album?)null);
+
+            var actual = _albumController.GetAlbumById(id);
+
+            Assert.That(actual, Is.TypeOf<NotFoundResult>());
+        }
+
+        [Test]
+        public void GetAlbumById_PosId_ReturnsNotFound()
+        {
+            DateOnly date1 = new DateOnly(1969, 9, 26);
+            List<string> tracks1 = new() { "Come Together", "Something", "Maxwell's Silver Hammer", "Oh! Darling", "Octopus's Garden" };
+            Album album1 = new();
+            album1.Quantity = 67;
+            album1.Name = "Abbey Road";
+            album1.Description = "The last album the Beatles ever recorded";
+            album1.Artist = "The Beatles";
+            album1.Genre = "Rock";
+            album1.ReleaseDate = date1;
+            album1.TrackList = tracks1;
+
+            int id = -5;
+
+            var actual = _albumController.GetAlbumById(id);
+
+            Assert.That(actual, Is.TypeOf<BadRequestResult>());
+        }
     }
 }
