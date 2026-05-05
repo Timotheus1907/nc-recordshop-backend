@@ -19,13 +19,6 @@ namespace nc_recordshop_backend.Repository
 
         public List<Album> FetchAlbums()
         {
-            Console.WriteLine("mnkgnh");
-            foreach (var a in _db.Albums)
-            {
-                Console.WriteLine("XXXA");
-                Console.WriteLine(a.Name);
-            }
-
             return _db.Albums.ToList();
         }
     }
