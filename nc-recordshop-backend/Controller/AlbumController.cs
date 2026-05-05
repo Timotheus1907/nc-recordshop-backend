@@ -19,11 +19,10 @@ namespace nc_recordshop_backend.Controller
         {
             return Ok(_albumService.GetAlbums());
         }
+
         [HttpGet("{id}")]
         public IActionResult GetAlbumById(int id)
         {
-
-
             var album = _albumService.GetAlbumById(id);
 
             if (id <= 0)
@@ -37,6 +36,19 @@ namespace nc_recordshop_backend.Controller
             }
 
             return Ok(_albumService.GetAlbumById(id));
+        }
+
+        [HttpPost]
+        public IActionResult AddAlbum(Album album)
+        {
+            return Ok(_albumService.AddAlbum(album));
+        }
+
+        // In Swagger, the id parameter is the very first id value
+        [HttpPut]
+        public IActionResult UpdateAlbum(Album album, int id)
+        {
+            return Ok(_albumService.UpdateAlbum(album, id));
         }
     }
 }

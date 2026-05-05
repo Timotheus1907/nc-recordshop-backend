@@ -6,7 +6,9 @@ namespace nc_recordshop_backend.Service
     public interface IAlbumService
     {
         public List<Album> GetAlbums();
-        public Album GetAlbumById(int id);
+        public Album? GetAlbumById(int id);
+        public Album AddAlbum(Album album);
+        public Album UpdateAlbum(Album album, int id);
     }
 
     public class AlbumService : IAlbumService
@@ -23,9 +25,19 @@ namespace nc_recordshop_backend.Service
             return _albumRepository.FetchAlbums();
         }
 
-        public Album GetAlbumById(int id)
+        public Album? GetAlbumById(int id)
         {
             return _albumRepository.FetchAlbumById(id);
+        }
+
+        public Album AddAlbum(Album album)
+        {
+            return _albumRepository.PostAlbum(album);
+        }
+        
+        public Album UpdateAlbum(Album album,int id)
+        {
+            return _albumRepository.PutAlbum(album, id);
         }
     }
 }
