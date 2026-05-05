@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Moq;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace nc_recordshop_backend.Tests.ControllerTests
 {
@@ -107,6 +108,7 @@ namespace nc_recordshop_backend.Tests.ControllerTests
             DateOnly date1 = new DateOnly(1969, 9, 26);
             List<string> tracks1 = new() { "Come Together", "Something", "Maxwell's Silver Hammer", "Oh! Darling", "Octopus's Garden" };
             Album album1 = new();
+            album1.Id = 1;
             album1.Quantity = 67;
             album1.Name = "Abbey Road";
             album1.Description = "The last album the Beatles ever recorded";
@@ -132,9 +134,11 @@ namespace nc_recordshop_backend.Tests.ControllerTests
         [Test]
         public void GetAlbumById_NegId_ReturnsBadReq()
         {
+            // maybe change this to match seeding
             DateOnly date1 = new DateOnly(1969, 9, 26);
             List<string> tracks1 = new() { "Come Together", "Something", "Maxwell's Silver Hammer", "Oh! Darling", "Octopus's Garden" };
             Album album1 = new();
+            album1.Id = 1;
             album1.Quantity = 67;
             album1.Name = "Abbey Road";
             album1.Description = "The last album the Beatles ever recorded";
@@ -149,28 +153,17 @@ namespace nc_recordshop_backend.Tests.ControllerTests
 
             var actual = _albumController.GetAlbumById(id);
 
-            Assert.That(actual, Is.TypeOf<NotFoundResult>());
+            Assert.That(actual, Is.TypeOf<BadRequestResult>());
         }
 
         [Test]
         public void GetAlbumById_PosId_ReturnsNotFound()
         {
-            DateOnly date1 = new DateOnly(1969, 9, 26);
-            List<string> tracks1 = new() { "Come Together", "Something", "Maxwell's Silver Hammer", "Oh! Darling", "Octopus's Garden" };
-            Album album1 = new();
-            album1.Quantity = 67;
-            album1.Name = "Abbey Road";
-            album1.Description = "The last album the Beatles ever recorded";
-            album1.Artist = "The Beatles";
-            album1.Genre = "Rock";
-            album1.ReleaseDate = date1;
-            album1.TrackList = tracks1;
-
-            int id = -5;
+            int id = 5;
 
             var actual = _albumController.GetAlbumById(id);
 
-            Assert.That(actual, Is.TypeOf<BadRequestResult>());
+            Assert.That(actual, Is.TypeOf<NotFoundResult>());
         }
     }
 }
