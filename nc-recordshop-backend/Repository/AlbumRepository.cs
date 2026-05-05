@@ -1,7 +1,20 @@
-﻿namespace nc_recordshop_backend.Repository
+﻿using nc_recordshop_backend.Model;
+
+namespace nc_recordshop_backend.Repository
 {
-    public class AlbumRepository
+    public interface IAlbumRepository
+    {
+        public List<Album> FetchAlbums();
+    }
+
+    public class AlbumRepository : IAlbumRepository
     {
         // constructor with a private db field here
+
+
+        public List<Album> FetchAlbums()
+        {
+            return new List<Album>();
+        }
     }
 }

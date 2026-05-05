@@ -10,7 +10,8 @@
         public string Artist { get; set; } = "";
         // string or enum
         public string Genre { get; set; } = "";
+        public DateOnly ReleaseDate { get; set; }
+        public List<string> TrackList { get; set; } = new List<string>();
         // string or DateTime
-        public DateTime ReleaseDate { get; set; }
     }
 }

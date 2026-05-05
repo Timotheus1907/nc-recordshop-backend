@@ -1,3 +1,5 @@
+using nc_recordshop_backend.Service;
+using nc_recordshop_backend.Repository;
 
 namespace nc_recordshop_backend
 {
@@ -10,6 +12,8 @@ namespace nc_recordshop_backend
             // Add services to the container.
 
             builder.Services.AddControllers();
+            builder.Services.AddScoped<IAlbumService, AlbumService>();
+            builder.Services.AddScoped<IAlbumRepository, AlbumRepository>();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();

@@ -1,0 +1,56 @@
+[
+  {
+    "Id": 1,
+    "Name": "The Dark Side of the Moon",
+    "Description": "The eigth albumn by Pink Floyd, it's a concept album exploring themes of conflict, greed, time",
+    "Artist": "Pink Floyd",
+    "Genre": "Progressive Rock",
+    "ReleaseDate": "1973-03-01",
+    "TrackList": [
+      "Speak To Me",
+      "Breathe",
+      "On The Run",
+      "Time",
+      "The Great Gig In The Sky",
+      "Money",
+      "Us And Them",
+      "Any Colour You Like",
+      "Brain Damage",
+      "Eclipse"
+    ]
+  }
+  {
+    "Id": 2,
+    "Name": "Bad",
+    "Description": "One of the best selling albums of all time",
+    "Artist": "Michael Jackson",
+    "Genre": "Dance-pop",
+    "ReleaseDate": "1987-08-31",
+    "TrackList": [
+      "I Just Can't Stop Loving You",
+      "Bad",
+      "The Way You Make Me Feel",
+      "Man in the Mirror",
+      "Dirty Diana",
+      "Another Part of Me",
+      "Smooth Criminal",
+      "Leave Me Alone",
+      "Liberian Girl"
+    ]
+  }
+  {
+    "Id": 3,
+    "Name": "21",
+    "Description": "Named after Adele's age during it's production",
+    "Artist": "Adele",
+    "Genre": "Pop",
+    "ReleaseDate": "2011-01-24",
+    "TrackList": [
+      "Rolling in the Deep",
+      "Someone like You",
+      "Set Fire to the Rain",
+      "Rumour Has It",
+      "Turning Tables"
+    ]
+  }
+]

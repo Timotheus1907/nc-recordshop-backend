@@ -1,19 +1,25 @@
-﻿using nc_recordshop_backend.Repository;
+﻿using nc_recordshop_backend.Model;
+using nc_recordshop_backend.Repository;
 
 namespace nc_recordshop_backend.Service
 {
     public interface IAlbumService
     {
-
+        public List<Album> GetAlbums();
     }
 
     public class AlbumService : IAlbumService
     {
-        private readonly AlbumRepository _albumRepository;
+        private readonly IAlbumRepository _albumRepository;
 
-        public AlbumService(AlbumRepository albumRepository)
+        public AlbumService(IAlbumRepository albumRepository)
         {
             _albumRepository = albumRepository;
+        }
+
+        public List<Album> GetAlbums()
+        {
+            return _albumRepository.FetchAlbums();
         }
     }
 }
