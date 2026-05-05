@@ -17,6 +17,7 @@ namespace nc_recordshop_backend.Controller
         [HttpGet]
         public IActionResult GetAlbums()
         {
+            Console.WriteLine("TEST");
             return Ok(_albumService.GetAlbums());
         }
     }

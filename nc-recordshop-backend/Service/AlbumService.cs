@@ -19,6 +19,7 @@ namespace nc_recordshop_backend.Service
 
         public List<Album> GetAlbums()
         {
+            Console.WriteLine("TEST2");
             return _albumRepository.FetchAlbums();
         }
     }
