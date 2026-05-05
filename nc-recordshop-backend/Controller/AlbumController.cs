@@ -48,7 +48,19 @@ namespace nc_recordshop_backend.Controller
         [HttpPut]
         public IActionResult UpdateAlbum(Album album, int id)
         {
-            return Ok(_albumService.UpdateAlbum(album, id));
+            var returnAlbum = _albumService.UpdateAlbum(album, id);
+
+            if (id <= 0)
+            {
+                return BadRequest();
+            }
+
+            if (returnAlbum == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(returnAlbum);
         }
     }
 }
