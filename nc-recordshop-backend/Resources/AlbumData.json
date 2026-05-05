@@ -1,6 +1,7 @@
 [
   {
     "Id": 1,
+    "Quantity": 3,
     "Name": "The Dark Side of the Moon",
     "Description": "The eigth albumn by Pink Floyd, it's a concept album exploring themes of conflict, greed, time",
     "Artist": "Pink Floyd",
@@ -21,6 +22,7 @@
   },
   {
     "Id": 2,
+    "Quantity": 0,
     "Name": "Bad",
     "Description": "One of the best selling albums of all time",
     "Artist": "Michael Jackson",
@@ -40,6 +42,7 @@
   },
   {
     "Id": 3,
+    "Quantity": 17,
     "Name": "21",
     "Description": "Named after Adele's age during it's production",
     "Artist": "Adele",

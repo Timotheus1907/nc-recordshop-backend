@@ -11,10 +11,10 @@ namespace nc_recordshop_backend
 
         public MyDbContext(DbContextOptions<MyDbContext> options) : base(options)
         {
-            // this or var db = new MyDbContext() in program.cs
+            // this or var db = new MyDbContext() in program.cs?
+            // Add migrations/update database not needed
             this.Database.EnsureCreated();
         }
-
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
