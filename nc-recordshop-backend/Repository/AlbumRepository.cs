@@ -6,7 +6,7 @@ namespace nc_recordshop_backend.Repository
     {
         public List<Album> FetchAlbums();
         public Album? FetchAlbumById(int id);
-        public Album PostAlbum(Album album);
+        public Task<Album> PostAlbum(Album album);
         public Album PutAlbum(Album album, int id);
         public void DeleteAlbum(int id);
     }
@@ -31,12 +31,12 @@ namespace nc_recordshop_backend.Repository
             return _db.Albums.FirstOrDefault(a => a.Id == id);
         }
 
-        public Album PostAlbum(Album album)
+        public async Task<Album> PostAlbum(Album album)
         {
-            album.Id = _db.Albums.Max(a => a.Id) + 1;
+            //album.Id = _db.Albums.Max(a => a.Id) + 1;
             _db.Albums.Add(album);
             // Test if this needs async
-            _db.SaveChanges();
+            await _db.SaveChangesAsync();
 
 
             return album;
@@ -46,6 +46,7 @@ namespace nc_recordshop_backend.Repository
         {
             var a = FetchAlbumById(id);
             // Could i just do a = album, and keep old id?
+            if (a == null) { a = new Album(); }
 
             a.Quantity = album.Quantity;
             a.Name = album.Name;

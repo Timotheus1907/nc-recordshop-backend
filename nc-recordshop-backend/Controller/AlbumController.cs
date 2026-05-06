@@ -39,14 +39,15 @@ namespace nc_recordshop_backend.Controller
         }
 
         [HttpPost]
-        public IActionResult AddAlbum(Album album)
+        public async Task<IActionResult> AddAlbum([FromBody] Album album)
         {
-            return Ok(_albumService.AddAlbum(album));
+            var albumReturned = await _albumService.AddAlbum(album);
+            return Ok(albumReturned);
         }
 
         // In Swagger, the id parameter is the very first id value
-        [HttpPut]
-        public IActionResult UpdateAlbum(Album album, int id)
+        [HttpPut("{id}")]
+        public IActionResult UpdateAlbum([FromBody] Album album, int id)
         {
             var returnAlbum = _albumService.UpdateAlbum(album, id);
 

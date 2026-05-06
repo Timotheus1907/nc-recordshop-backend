@@ -7,7 +7,7 @@ namespace nc_recordshop_backend.Service
     {
         public List<Album> GetAlbums();
         public Album? GetAlbumById(int id);
-        public Album AddAlbum(Album album);
+        public Task<Album> AddAlbum(Album album);
         public Album UpdateAlbum(Album album, int id);
         public void RemoveAlbum(int id);
     }
@@ -31,9 +31,9 @@ namespace nc_recordshop_backend.Service
             return _albumRepository.FetchAlbumById(id);
         }
 
-        public Album AddAlbum(Album album)
+        public async Task<Album> AddAlbum(Album album)
         {
-            return _albumRepository.PostAlbum(album);
+            return await _albumRepository.PostAlbum(album);
         }
         
         public Album UpdateAlbum(Album album,int id)
