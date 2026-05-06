@@ -62,6 +62,13 @@ namespace nc_recordshop_backend
                 app.UseSwaggerUI();
             }
 
+            // Temp
+            if (app.Environment.IsProduction())
+            {
+                app.UseSwagger();
+                app.UseSwaggerUI();
+            }
+
             app.UseHttpsRedirection();
 
             app.UseAuthorization();

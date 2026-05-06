@@ -77,5 +77,29 @@ namespace nc_recordshop_backend.Controller
 
             return Ok();
         }
+
+        [HttpGet("artist/{name}")]
+        public IActionResult GetAlbumsByArtist(string name)
+        {
+            return Ok(_albumService.GetAlbumsByArtist(name));
+        }
+
+        [HttpGet("year/{year}")]
+        public IActionResult GetAlbumsByReleaseYear(int year)
+        {
+            return Ok(_albumService.GetAlbumsByReleaseYear(year));
+        }
+
+        [HttpGet("genre/{genre}")]
+        public IActionResult GetAlbumsByGenre(string genre)
+        {
+            return Ok(_albumService.GetAlbumsByGenre(genre));
+        }
+
+        [HttpGet("album/{name}")]
+        public IActionResult GetAlbumInfoByName(string name)
+        {
+            return Ok(_albumService.GetAlbumInfoByName(name));
+        }
     }
 }
