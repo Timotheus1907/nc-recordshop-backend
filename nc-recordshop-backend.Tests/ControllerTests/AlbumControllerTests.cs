@@ -193,8 +193,6 @@ namespace nc_recordshop_backend.Tests.ControllerTests
             Assert.That(a.Value, Is.EqualTo(album1));
         }
 
-        // ------------------------------------------------------------------------
-
         [Test]
         public void UpdateAlbum_PosId_ReturnsOKAlbum()
         {
@@ -269,6 +267,45 @@ namespace nc_recordshop_backend.Tests.ControllerTests
             var actual = _albumController.UpdateAlbum(album1, id);
 
             Assert.That(actual, Is.TypeOf<NotFoundResult>());
+        }
+
+        //---------------------------------------------------
+
+        [Test]
+        public void RemoveAlbum_PosId_ReturnsOK()
+        {
+
+            int id = 2;
+
+
+            //_albumServiceMock.Setup(a => a.RemoveAlbum(id));
+
+            var actual = _albumController.RemoveAlbum(id);
+
+            Assert.That(actual, Is.TypeOf<OkResult>());
+            _albumServiceMock.Verify(a => a.RemoveAlbum(id), Times.Once());
+        }
+
+        [Test]
+        public void RemoveAlbum_NegId_ReturnsBadReq()
+        {
+            int id = -5;
+
+            var actual = _albumController.RemoveAlbum(id);
+
+            Assert.That(actual, Is.TypeOf<BadRequestResult>());
+            _albumServiceMock.Verify(a => a.RemoveAlbum(id), Times.Once());
+        }
+
+        [Test]
+        public void RemoveAlbum_PosId_ReturnsNotFound()
+        {
+            int id = 5;
+
+            var actual = _albumController.RemoveAlbum(id);
+
+            Assert.That(actual, Is.TypeOf<NotFoundResult>());
+            _albumServiceMock.Verify(a => a.RemoveAlbum(id), Times.Once());
         }
     }
 

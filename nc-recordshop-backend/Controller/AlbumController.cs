@@ -62,5 +62,14 @@ namespace nc_recordshop_backend.Controller
 
             return Ok(returnAlbum);
         }
+
+        [HttpDelete("{id}")]
+        public IActionResult RemoveAlbum(int id)
+        {
+            // could be bool on success
+            _albumService.RemoveAlbum(id);
+
+            return Ok();
+        }
     }
 }

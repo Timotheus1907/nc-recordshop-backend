@@ -72,5 +72,7 @@ namespace nc_recordshop_backend.Tests.ServiceTests
 
             Assert.That(actual, Is.EqualTo(album1));
         }
+
+        // do AddAlbum, UpdateAlbum, RemoveAlbum tests
     }
 }

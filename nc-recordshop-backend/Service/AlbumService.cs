@@ -9,6 +9,7 @@ namespace nc_recordshop_backend.Service
         public Album? GetAlbumById(int id);
         public Album AddAlbum(Album album);
         public Album UpdateAlbum(Album album, int id);
+        public void RemoveAlbum(int id);
     }
 
     public class AlbumService : IAlbumService
@@ -38,6 +39,11 @@ namespace nc_recordshop_backend.Service
         public Album UpdateAlbum(Album album,int id)
         {
             return _albumRepository.PutAlbum(album, id);
+        }
+
+        public void RemoveAlbum(int id)
+        {
+            _albumRepository.DeleteAlbum(id);
         }
     }
 }

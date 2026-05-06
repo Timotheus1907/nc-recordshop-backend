@@ -8,6 +8,7 @@ namespace nc_recordshop_backend.Repository
         public Album? FetchAlbumById(int id);
         public Album PostAlbum(Album album);
         public Album PutAlbum(Album album, int id);
+        public void DeleteAlbum(int id);
     }
 
     public class AlbumRepository : IAlbumRepository
@@ -45,6 +46,7 @@ namespace nc_recordshop_backend.Repository
         {
             var a = FetchAlbumById(id);
             // Could i just do a = album, and keep old id?
+
             a.Quantity = album.Quantity;
             a.Name = album.Name;
             a.Description = album.Description;
@@ -52,13 +54,22 @@ namespace nc_recordshop_backend.Repository
             a.Genre = album.Genre;
             a.ReleaseDate = album.ReleaseDate;
             a.TrackList = album.TrackList;
-
-            //a.Name = album.Name;
-
-
+            // async?
             _db.SaveChanges();
 
+
             return a;
+        }
+
+        public void DeleteAlbum(int id)
+        {
+            var album = _db.Albums.FirstOrDefault(a => a.Id == id);
+            if (album != null)
+            {
+                _db.Albums.Remove(album);
+            }
+            // async?
+            _db.SaveChanges();
         }
     }
 }
