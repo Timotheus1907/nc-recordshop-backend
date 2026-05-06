@@ -9,11 +9,27 @@ namespace nc_recordshop_backend
     {
         public static void Main(string[] args)
         {
-            var builder = WebApplication.CreateBuilder(args);
-
-
-            builder.Services.AddDbContext<MyDbContext>(options => options.UseInMemoryDatabase("AlbumTestingDb"));
             
+
+            var builder = WebApplication.CreateBuilder(args);
+            //builder.Environment.IsDevelopment()
+            /*if (builder.Environment.IsProduction())
+            {
+                Console.WriteLine("PROD Database");
+                builder.Services.AddDbContext<MyDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ProdDefaultConnection")));
+            }*/
+            Console.WriteLine("PROD Database");
+            string connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+            builder.Services.AddDbContext<MyDbContext>(options => options.UseSqlServer(connectionString));
+            /*else
+            {
+                Console.WriteLine("In Memory Database");
+                builder.Services.AddDbContext<MyDbContext>(options => options.UseInMemoryDatabase("DevDefaultConnection"));
+            }*/
+
+            //builder.Services.AddDbContext<MyDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+
 
             /*if (builder.Environment.IsDevelopment())
             {
