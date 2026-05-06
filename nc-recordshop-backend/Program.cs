@@ -9,7 +9,11 @@ namespace nc_recordshop_backend
     {
         public static void Main(string[] args)
         {
-            
+            // In Package Manager Console
+            //
+            // Add-Migration mig1
+            // Update-Database
+            // $env:ASPNETCORE_ENVIRONMENT='Production'
 
             var builder = WebApplication.CreateBuilder(args);
             //builder.Environment.IsDevelopment()
