@@ -9,11 +9,32 @@ namespace nc_recordshop_backend
     {
         public static void Main(string[] args)
         {
+            // TODO now
+            // Add exception handling
+            // Add new test for the recently added new functionality and have it function with the exception handling
+            // Check if all _db.SaveChanges() will need to become async (for the exceptions)
+            // Fix Production - Develop databases, so simply changing environtment variables will work
+            // Remove temp SwaggerUI usage from production
+
+
+
             // In Package Manager Console
             //
             // Add-Migration mig1
             // Update-Database
             // $env:ASPNETCORE_ENVIRONMENT='Production'
+
+
+
+
+
+
+
+
+
+
+
+
 
             var builder = WebApplication.CreateBuilder(args);
             //builder.Environment.IsDevelopment()

@@ -77,7 +77,6 @@ namespace nc_recordshop_backend.Repository
             _db.SaveChanges();
         }
 
-        // ---------- TODO -----------------------
         public List<Album> FetchAlbumsByArtist(string name)
         {
             return _db.Albums.Where(a => a.Artist == name).ToList();
