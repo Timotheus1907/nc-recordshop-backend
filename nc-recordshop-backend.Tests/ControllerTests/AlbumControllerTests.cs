@@ -167,7 +167,7 @@ namespace nc_recordshop_backend.Tests.ControllerTests
         }
 
         [Test]
-        public void AddAlbum_ReturnsOk()
+        public async Task AddAlbum_ReturnsOk()
         {
             DateOnly date1 = new DateOnly(1969, 9, 26);
             List<string> tracks1 = new() { "Come Together", "Something", "Maxwell's Silver Hammer", "Oh! Darling", "Octopus's Garden" };
@@ -182,15 +182,14 @@ namespace nc_recordshop_backend.Tests.ControllerTests
             album1.TrackList = tracks1;
 
 
-            _albumServiceMock.Setup(a => a.AddAlbum(album1)).Returns(album1);
+            _albumServiceMock.Setup(a => a.AddAlbum(album1)).ReturnsAsync(album1);
 
-            var actual = _albumController.AddAlbum(album1);
+            var actual = (OkObjectResult)(await _albumController.AddAlbum(album1));
+
 
             Assert.That(actual, Is.TypeOf<OkObjectResult>());
 
-            var a = actual as OkObjectResult;
-
-            Assert.That(a.Value, Is.EqualTo(album1));
+            Assert.That(actual.Value, Is.EqualTo(album1));
         }
 
         [Test]
