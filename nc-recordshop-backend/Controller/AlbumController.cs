@@ -69,6 +69,11 @@ namespace nc_recordshop_backend.Controller
             // could be bool on success
             _albumService.RemoveAlbum(id);
 
+            if (id <= 0)
+            {
+                return BadRequest();
+            }
+
             return Ok();
         }
     }

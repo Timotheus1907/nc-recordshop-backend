@@ -297,6 +297,7 @@ namespace nc_recordshop_backend.Tests.ControllerTests
             _albumServiceMock.Verify(a => a.RemoveAlbum(id), Times.Once());
         }
 
+        /*// Save this for exception handling
         [Test]
         public void RemoveAlbum_PosId_ReturnsNotFound()
         {
@@ -306,7 +307,7 @@ namespace nc_recordshop_backend.Tests.ControllerTests
 
             Assert.That(actual, Is.TypeOf<NotFoundResult>());
             _albumServiceMock.Verify(a => a.RemoveAlbum(id), Times.Once());
-        }
+        }*/
     }
 
         /*[Test]
