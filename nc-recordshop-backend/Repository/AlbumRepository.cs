@@ -8,7 +8,7 @@ namespace nc_recordshop_backend.Repository
         public Album? FetchAlbumById(int id);
         public Task<Album> PostAlbum(Album album);
         public Album PutAlbum(Album album, int id);
-        public void DeleteAlbum(int id);
+        public Task DeleteAlbum(int id);
         public List<Album> FetchAlbumsByArtist(string name);
         public List<Album> FetchAlbumsByReleaseYear(int year);
         public List<Album> FetchAlbumsByGenre(string genre);
@@ -66,15 +66,16 @@ namespace nc_recordshop_backend.Repository
             return a;
         }
 
-        public void DeleteAlbum(int id)
+        public async Task DeleteAlbum(int id)
         {
             var album = _db.Albums.FirstOrDefault(a => a.Id == id);
-            if (album != null)
+            /*if (album != null)
             {
                 _db.Albums.Remove(album);
-            }
+            }*/
+            _db.Albums.Remove(album);
             // async?
-            _db.SaveChanges();
+            await _db.SaveChangesAsync();
         }
 
         public List<Album> FetchAlbumsByArtist(string name)

@@ -65,10 +65,10 @@ namespace nc_recordshop_backend.Controller
         }
 
         [HttpDelete("{id}")]
-        public IActionResult RemoveAlbum(int id)
+        public async Task<IActionResult> RemoveAlbum(int id)
         {
             // could be bool on success
-            _albumService.RemoveAlbum(id);
+            await _albumService.RemoveAlbum(id);
 
             if (id <= 0)
             {

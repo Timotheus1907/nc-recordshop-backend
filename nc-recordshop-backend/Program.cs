@@ -73,8 +73,12 @@ namespace nc_recordshop_backend
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            builder.Services.AddTransient<ExceptionHandlerMiddleWare>();
+
 
             var app = builder.Build();
+
+            app.UseMiddleware<ExceptionHandlerMiddleWare>();
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
