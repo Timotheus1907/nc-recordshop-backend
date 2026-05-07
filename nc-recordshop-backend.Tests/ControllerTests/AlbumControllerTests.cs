@@ -269,9 +269,8 @@ namespace nc_recordshop_backend.Tests.ControllerTests
         }
 
         //---------------------------------------------------
-
         [Test]
-        public void RemoveAlbum_PosId_ReturnsOK()
+        public async Task RemoveAlbum_PosId_ReturnsOK()
         {
 
             int id = 2;
@@ -279,18 +278,31 @@ namespace nc_recordshop_backend.Tests.ControllerTests
 
             //_albumServiceMock.Setup(a => a.RemoveAlbum(id));
 
-            var actual = _albumController.RemoveAlbum(id);
+            var actual = await _albumController.RemoveAlbum(id);
 
             Assert.That(actual, Is.TypeOf<OkResult>());
             _albumServiceMock.Verify(a => a.RemoveAlbum(id), Times.Once());
         }
 
         [Test]
-        public void RemoveAlbum_NegId_ReturnsBadReq()
+        public async Task RemoveAlbum_PosId_ReturnsNotFound()
+        {
+
+            int id = 5000;
+
+
+            _albumServiceMock.Setup(a => a.RemoveAlbum(id)).ThrowsAsync(new ArgumentException());
+
+            Assert.ThrowsAsync<ArgumentException>(async () => await _albumController.RemoveAlbum(id));
+            _albumServiceMock.Verify(a => a.RemoveAlbum(id), Times.Once());
+        }
+
+        [Test]
+        public async Task RemoveAlbum_NegId_ReturnsBadReq()
         {
             int id = -5;
 
-            var actual = _albumController.RemoveAlbum(id);
+            var actual = await _albumController.RemoveAlbum(id);
 
             Assert.That(actual, Is.TypeOf<BadRequestResult>());
             _albumServiceMock.Verify(a => a.RemoveAlbum(id), Times.Once());
@@ -298,7 +310,7 @@ namespace nc_recordshop_backend.Tests.ControllerTests
 
         /*// Save this for exception handling
         [Test]
-        public void RemoveAlbum_PosId_ReturnsNotFound()
+        public void RemoveAlbum_PosId_ReturnsNotFound()d
         {
             int id = 5;
 

@@ -48,6 +48,7 @@ namespace nc_recordshop_backend.Service
 
         public async Task RemoveAlbum(int id)
         {
+            if (id <= 0) throw new ArgumentException();
             await _albumRepository.DeleteAlbum(id);
         }
 

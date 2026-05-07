@@ -18,9 +18,21 @@ namespace nc_recordshop_backend
             }
         }
 
-        private void HandleException(HttpContext context, Exception e)
+        private async Task HandleException(HttpContext context, Exception e)
         {
             Console.WriteLine("Handling exception");
+            Console.WriteLine(e);
+
+            if (e is ArgumentException)
+            {
+                context.Response.StatusCode = StatusCodes.Status404NotFound;
+                await context.Response.WriteAsJsonAsync(new { message = "Album not found." });
+            }
+            else
+            {
+                context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                await context.Response.WriteAsJsonAsync(new { message = "Bad request" });
+            }
         }
     }
 }
