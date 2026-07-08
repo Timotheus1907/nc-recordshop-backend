@@ -16,7 +16,7 @@ namespace nc_recordshop_backend
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            var albums = JsonSerializer.Deserialize<List<Album>>(File.ReadAllText("Resources\\AlbumData.json"));
+            var albums = JsonSerializer.Deserialize<List<Album>>(File.ReadAllText("Resources/AlbumData.json"));
             modelBuilder.Entity<Album>().HasData(albums);
         }
     }

@@ -9,34 +9,8 @@ namespace nc_recordshop_backend
     {
         public static void Main(string[] args)
         {
-            // TODO now
-            // Add exception handling
-            // Add new test for the recently added new functionality and have it function with the exception handling
-            // Check if all _db.SaveChanges() will need to become async (for the exceptions)
-            // Fix Production - Develop databases, so simply changing environtment variables will work
-            // Remove temp SwaggerUI usage from production
-
-
-
-            // In Package Manager Console
-
-            // $env:ASPNETCORE_ENVIRONMENT='Production'
-            // Add-Migration mig1
-            // Update-Database
-
-
-
-
-
-
-
-
-
-
-
-
             var builder = WebApplication.CreateBuilder(args);
-            //builder.Environment.IsDevelopment()
+
             if (builder.Environment.IsProduction())
             {
                 Console.WriteLine("PROD Database");
@@ -48,21 +22,6 @@ namespace nc_recordshop_backend
                 Console.WriteLine("In Memory Database");
                 builder.Services.AddDbContext<MyDbContext>(options => options.UseInMemoryDatabase("DefaultConnection"));
             }
-            /*else
-            {
-                Console.WriteLine("In Memory Database");
-                builder.Services.AddDbContext<MyDbContext>(options => options.UseInMemoryDatabase("DevDefaultConnection"));
-            }*/
-
-            //builder.Services.AddDbContext<MyDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
-
-
-            /*if (builder.Environment.IsDevelopment())
-            {
-                Console.WriteLine("Is in Development, using in memory db");
-                builder.Services.AddInMemoryDatabases;
-            }*/
 
             // Add services to the container.
 
@@ -103,6 +62,7 @@ namespace nc_recordshop_backend
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
             // Temp
             if (app.Environment.IsProduction())
             {
