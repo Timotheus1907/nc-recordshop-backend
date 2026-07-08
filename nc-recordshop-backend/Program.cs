@@ -38,14 +38,17 @@ namespace nc_recordshop_backend
 
             var builder = WebApplication.CreateBuilder(args);
             //builder.Environment.IsDevelopment()
-            /*if (builder.Environment.IsProduction())
+            if (builder.Environment.IsProduction())
             {
                 Console.WriteLine("PROD Database");
-                builder.Services.AddDbContext<MyDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ProdDefaultConnection")));
-            }*/
-            Console.WriteLine("PROD Database");
-            string connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-            builder.Services.AddDbContext<MyDbContext>(options => options.UseSqlServer(connectionString));
+                string connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+                builder.Services.AddDbContext<MyDbContext>(options => options.UseSqlServer(connectionString));
+            }
+            else if (builder.Environment.IsDevelopment())
+            {
+                Console.WriteLine("In Memory Database");
+                builder.Services.AddDbContext<MyDbContext>(options => options.UseInMemoryDatabase("DefaultConnection"));
+            }
             /*else
             {
                 Console.WriteLine("In Memory Database");
@@ -78,6 +81,12 @@ namespace nc_recordshop_backend
 
             var app = builder.Build();
 
+            using (var scope = app.Services.CreateScope())
+            {
+                var db = scope.ServiceProvider.GetRequiredService<MyDbContext>();
+                db.Database.EnsureCreated();
+            }
+
             app.UseMiddleware<ExceptionHandlerMiddleWare>();
 
             // Configure the HTTP request pipeline.
@@ -86,7 +95,6 @@ namespace nc_recordshop_backend
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
-
             // Temp
             if (app.Environment.IsProduction())
             {

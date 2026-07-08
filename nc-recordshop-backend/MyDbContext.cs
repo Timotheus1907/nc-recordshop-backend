@@ -13,14 +13,14 @@ namespace nc_recordshop_backend
         {
             // this or var db = new MyDbContext() in program.cs?
             // Add migrations/update database not needed
-            //this.Database.EnsureCreated();
+            
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        /*protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //optionsBuilder.UseInMemoryDatabase("DevDefaultConnection");
-            //optionsBuilder.UseSqlServer("ProdDefaultConnection");
-        }
+            optionsBuilder.UseInMemoryDatabase("DefaultConnection");
+            optionsBuilder.UseSqlServer("DefaultConnection");
+        }*/
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
