@@ -19,11 +19,10 @@ namespace nc_recordshop_backend
 
 
             // In Package Manager Console
-            //
+
+            // $env:ASPNETCORE_ENVIRONMENT='Production'
             // Add-Migration mig1
             // Update-Database
-            // $env:ASPNETCORE_ENVIRONMENT='Production'
-
 
 
 
@@ -84,7 +83,16 @@ namespace nc_recordshop_backend
             using (var scope = app.Services.CreateScope())
             {
                 var db = scope.ServiceProvider.GetRequiredService<MyDbContext>();
-                db.Database.EnsureCreated();
+                if (builder.Environment.IsProduction())
+                {
+                    db.Database.Migrate();
+                }
+
+                else if (app.Environment.IsDevelopment())
+                {
+                    db.Database.EnsureCreated();
+                }
+
             }
 
             app.UseMiddleware<ExceptionHandlerMiddleWare>();
