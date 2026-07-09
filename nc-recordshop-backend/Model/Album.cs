@@ -5,6 +5,7 @@
     public class Album
     {
         public int Id { get; set; }
+        public decimal Price { get; set; }
         public int Quantity { get; set; } = 0;
         public string Name { get; set; } = "";
         public string Description { get; set; } = "";
@@ -14,5 +15,6 @@
         // string or DateOnly
         public DateOnly ReleaseDate { get; set; }
         public List<string> TrackList { get; set; } = new();
+        public string ImageUrl { get; set; } = "";
     }
 }

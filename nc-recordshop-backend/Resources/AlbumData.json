@@ -2,11 +2,13 @@
   {
     "Id": 1,
     "Quantity": 3,
+    "Price": 29.99,
     "Name": "The Dark Side of the Moon",
     "Description": "The eighth album by Pink Floyd, it's a concept album exploring themes of conflict, greed, and time.",
     "Artist": "Pink Floyd",
     "Genre": "Progressive Rock",
     "ReleaseDate": "1973-03-01",
+    "ImageUrl": "images/records/the-dark-side-of-the-moon.jpg",
     "TrackList": [
       "Speak to Me",
       "Breathe (In the Air)",
@@ -23,11 +25,13 @@
   {
     "Id": 2,
     "Quantity": 0,
+    "Price": 19.99,
     "Name": "Bad",
     "Description": "One of the best-selling albums of all time and Michael Jackson's seventh studio album.",
     "Artist": "Michael Jackson",
     "Genre": "Pop, R&B, Funk",
     "ReleaseDate": "1987-08-31",
+    "ImageUrl": "images/records/bad.jpg",
     "TrackList": [
       "Bad",
       "The Way You Make Me Feel",
@@ -45,11 +49,13 @@
   {
     "Id": 3,
     "Quantity": 17,
+    "Price": 21.99,
     "Name": "21",
     "Description": "Named after Adele's age during its production, this is her second studio album.",
     "Artist": "Adele",
     "Genre": "Pop, Soul",
     "ReleaseDate": "2011-01-24",
+    "ImageUrl": "images/records/21.jpg",
     "TrackList": [
       "Rolling in the Deep",
       "Rumour Has It",
@@ -67,11 +73,13 @@
   {
     "Id": 4,
     "Quantity": 10,
+    "Price": 24.99,
     "Name": "Thriller",
     "Description": "The best-selling album of all time by Michael Jackson.",
     "Artist": "Michael Jackson",
     "Genre": "Pop, Post-Disco, R&B, Rock",
     "ReleaseDate": "1982-11-29",
+    "ImageUrl": "images/records/thriller.jpg",
     "TrackList": [
       "Wanna Be Startin' Somethin'",
       "Baby Be Mine",
@@ -87,11 +95,13 @@
   {
     "Id": 5,
     "Quantity": 10,
+    "Price": 22.99,
     "Name": "Back in Black",
     "Description": "The seventh studio album by Australian rock band AC/DC.",
     "Artist": "AC/DC",
     "Genre": "Hard Rock",
     "ReleaseDate": "1980-07-25",
+    "ImageUrl": "images/records/back-in-black.jpg",
     "TrackList": [
       "Hells Bells",
       "Shoot to Thrill",
@@ -108,11 +118,13 @@
   {
     "Id": 6,
     "Quantity": 10,
+    "Price": 18.99,
     "Name": "The Bodyguard",
     "Description": "Soundtrack to the 1992 film, primarily featuring Whitney Houston.",
     "Artist": "Whitney Houston",
     "Genre": "R&B, Pop",
     "ReleaseDate": "1992-11-17",
+    "ImageUrl": "images/records/the-bodyguard.jpg",
     "TrackList": [
       "I Will Always Love You",
       "I Have Nothing",
@@ -132,11 +144,13 @@
   {
     "Id": 7,
     "Quantity": 10,
+    "Price": 26.99,
     "Name": "Rumours",
     "Description": "The eleventh studio album by British-American rock band Fleetwood Mac.",
     "Artist": "Fleetwood Mac",
     "Genre": "Soft Rock",
     "ReleaseDate": "1977-02-04",
+    "ImageUrl": "images/records/rumours.jpg",
     "TrackList": [
       "Second Hand News",
       "Dreams",
@@ -154,11 +168,13 @@
   {
     "Id": 8,
     "Quantity": 10,
+    "Price": 17.99,
     "Name": "Saturday Night Fever",
     "Description": "The soundtrack album from the 1977 film.",
     "Artist": "Bee Gees",
     "Genre": "Disco",
     "ReleaseDate": "1977-11-15",
+    "ImageUrl": "images/records/saturday-night-fever.jpg",
     "TrackList": [
       "Stayin' Alive",
       "How Deep Is Your Love",
@@ -182,11 +198,13 @@
   {
     "Id": 9,
     "Quantity": 10,
+    "Price": 19.99,
     "Name": "Come On Over",
     "Description": "The third studio album by Canadian singer Shania Twain.",
     "Artist": "Shania Twain",
     "Genre": "Country Pop",
     "ReleaseDate": "1997-11-04",
+    "ImageUrl": "images/records/come-on-over.jpg",
     "TrackList": [
       "Man! I Feel Like a Woman!",
       "I'm Holdin' On to Love (To Save My Life)",
@@ -209,11 +227,13 @@
   {
     "Id": 10,
     "Quantity": 10,
+    "Price": 20.99,
     "Name": "Bat Out of Hell",
     "Description": "The 1977 debut album by American rock singer Meat Loaf.",
     "Artist": "Meat Loaf",
     "Genre": "Hard Rock, Progressive Rock",
     "ReleaseDate": "1977-10-21",
+    "ImageUrl": "images/records/bat-out-of-hell.jpg",
     "TrackList": [
       "Bat Out of Hell",
       "You Took the Words Right Out of My Mouth (Hot Summer Night)",
@@ -227,11 +247,13 @@
   {
     "Id": 11,
     "Quantity": 10,
+    "Price": 25.99,
     "Name": "Hotel California",
     "Description": "The fifth studio album by American rock band Eagles.",
     "Artist": "Eagles",
     "Genre": "Rock",
     "ReleaseDate": "1976-12-08",
+    "ImageUrl": "images/records/hotel-california.jpg",
     "TrackList": [
       "Hotel California",
       "New Kid in Town",
@@ -247,11 +269,13 @@
   {
     "Id": 12,
     "Quantity": 10,
+    "Price": 28.99,
     "Name": "Sgt. Pepper's Lonely Hearts Club Band",
     "Description": "The eighth studio album by the English rock band the Beatles.",
     "Artist": "The Beatles",
     "Genre": "Psychedelic Rock",
     "ReleaseDate": "1967-05-26",
+    "ImageUrl": "images/records/sgt-peppers-lonely-hearts-club-band.jpg",
     "TrackList": [
       "Sgt. Pepper's Lonely Hearts Club Band",
       "With a Little Help from My Friends",
@@ -271,11 +295,13 @@
   {
     "Id": 13,
     "Quantity": 10,
+    "Price": 24.99,
     "Name": "Led Zeppelin IV",
     "Description": "The untitled fourth studio album by the English rock band Led Zeppelin.",
     "Artist": "Led Zeppelin",
     "Genre": "Hard Rock, Heavy Metal",
     "ReleaseDate": "1971-11-08",
+    "ImageUrl": "images/records/led-zeppelin-iv.jpg",
     "TrackList": [
       "Black Dog",
       "Rock and Roll",
@@ -290,11 +316,13 @@
   {
     "Id": 14,
     "Quantity": 10,
+    "Price": 21.99,
     "Name": "Born in the U.S.A.",
     "Description": "The seventh studio album by American rock singer-songwriter Bruce Springsteen.",
     "Artist": "Bruce Springsteen",
     "Genre": "Heartland Rock",
     "ReleaseDate": "1984-06-04",
+    "ImageUrl": "images/records/born-in-the-usa.jpg",
     "TrackList": [
       "Born in the U.S.A.",
       "Cover Me",
@@ -313,11 +341,13 @@
   {
     "Id": 15,
     "Quantity": 10,
+    "Price": 18.99,
     "Name": "Jagged Little Pill",
     "Description": "The third studio album by Canadian singer Alanis Morissette.",
     "Artist": "Alanis Morissette",
     "Genre": "Alternative Rock",
     "ReleaseDate": "1995-06-13",
+    "ImageUrl": "images/records/jagged-little-pill.jpg",
     "TrackList": [
       "All I Really Want",
       "You Oughta Know",
@@ -336,11 +366,13 @@
   {
     "Id": 16,
     "Quantity": 10,
+    "Price": 22.99,
     "Name": "1",
     "Description": "A compilation album by the English rock band the Beatles.",
     "Artist": "The Beatles",
     "Genre": "Rock",
     "ReleaseDate": "2000-11-13",
+    "ImageUrl": "images/records/1.jpg",
     "TrackList": [
       "Love Me Do",
       "From Me to You",
@@ -374,11 +406,13 @@
   {
     "Id": 17,
     "Quantity": 10,
+    "Price": 19.99,
     "Name": "Falling into You",
     "Description": "The fourth English-language studio album by Canadian singer Celine Dion.",
     "Artist": "Celine Dion",
     "Genre": "Pop",
     "ReleaseDate": "1996-03-11",
+    "ImageUrl": "images/records/falling-into-you.jpg",
     "TrackList": [
       "It's All Coming Back to Me Now",
       "Because You Loved Me",
@@ -400,11 +434,13 @@
   {
     "Id": 18,
     "Quantity": 10,
+    "Price": 19.99,
     "Name": "Let's Talk About Love",
     "Description": "The fifth English-language studio album by Canadian singer Celine Dion.",
     "Artist": "Celine Dion",
     "Genre": "Pop",
     "ReleaseDate": "1997-11-14",
+    "ImageUrl": "images/records/lets-talk-about-love.jpg",
     "TrackList": [
       "The Reason",
       "Immortality",
@@ -426,11 +462,13 @@
   {
     "Id": 19,
     "Quantity": 10,
+    "Price": 27.99,
     "Name": "Abbey Road",
     "Description": "The eleventh studio album by the English rock band the Beatles.",
     "Artist": "The Beatles",
     "Genre": "Rock",
     "ReleaseDate": "1969-09-26",
+    "ImageUrl": "images/records/abbey-road.jpg",
     "TrackList": [
       "Come Together",
       "Something",
@@ -454,11 +492,13 @@
   {
     "Id": 20,
     "Quantity": 10,
+    "Price": 23.99,
     "Name": "Nevermind",
     "Description": "The second studio album by American rock band Nirvana.",
     "Artist": "Nirvana",
     "Genre": "Grunge",
     "ReleaseDate": "1991-09-24",
+    "ImageUrl": "images/records/nevermind.jpg",
     "TrackList": [
       "Smells Like Teen Spirit",
       "In Bloom",
@@ -478,11 +518,13 @@
   {
     "Id": 21,
     "Quantity": 10,
+    "Price": 20.99,
     "Name": "Brothers in Arms",
     "Description": "The fifth studio album by British rock band Dire Straits.",
     "Artist": "Dire Straits",
     "Genre": "Roots Rock",
     "ReleaseDate": "1985-05-13",
+    "ImageUrl": "images/records/brothers-in-arms.jpg",
     "TrackList": [
       "So Far Away",
       "Money for Nothing",
@@ -498,11 +540,13 @@
   {
     "Id": 22,
     "Quantity": 10,
+    "Price": 29.99,
     "Name": "The Wall",
     "Description": "The eleventh studio album by the English rock band Pink Floyd.",
     "Artist": "Pink Floyd",
     "Genre": "Progressive Rock",
     "ReleaseDate": "1979-11-30",
+    "ImageUrl": "images/records/the-wall.jpg",
     "TrackList": [
       "In the Flesh?",
       "The Thin Ice",
@@ -535,11 +579,13 @@
   {
     "Id": 23,
     "Quantity": 10,
+    "Price": 18.99,
     "Name": "Supernatural",
     "Description": "The eighteenth studio album by Latin rock band Santana.",
     "Artist": "Santana",
     "Genre": "Latin Rock",
     "ReleaseDate": "1999-06-15",
+    "ImageUrl": "images/records/supernatural.jpg",
     "TrackList": [
       "(Da Le) Yaleo",
       "Love of My Life",
@@ -549,7 +595,7 @@
       "Do You Like the Way",
       "Maria Maria",
       "Migra",
-      "Coraz\u00f3n Espinado",
+      "Corazón Espinado",
       "Wishing It Was",
       "El Farol",
       "Primavera",
@@ -559,11 +605,13 @@
   {
     "Id": 24,
     "Quantity": 10,
+    "Price": 22.99,
     "Name": "Appetite for Destruction",
     "Description": "The debut studio album by American hard rock band Guns N' Roses.",
     "Artist": "Guns N' Roses",
     "Genre": "Hard Rock",
     "ReleaseDate": "1987-07-21",
+    "ImageUrl": "images/records/appetite-for-destruction.jpg",
     "TrackList": [
       "Welcome to the Jungle",
       "It's So Easy",
@@ -582,11 +630,13 @@
   {
     "Id": 25,
     "Quantity": 10,
+    "Price": 16.99,
     "Name": "Gold: Greatest Hits",
     "Description": "A compilation album by the Swedish pop group ABBA.",
     "Artist": "ABBA",
     "Genre": "Pop, Disco",
     "ReleaseDate": "1992-09-21",
+    "ImageUrl": "images/records/gold-greatest-hits.jpg",
     "TrackList": [
       "Dancing Queen",
       "Knowing Me, Knowing You",
@@ -612,11 +662,13 @@
   {
     "Id": 26,
     "Quantity": 10,
+    "Price": 19.99,
     "Name": "Slippery When Wet",
     "Description": "The third studio album by American rock band Bon Jovi.",
     "Artist": "Bon Jovi",
     "Genre": "Hard Rock, Glam Metal",
     "ReleaseDate": "1986-08-18",
+    "ImageUrl": "images/records/slippery-when-wet.jpg",
     "TrackList": [
       "Let It Rock",
       "You Give Love a Bad Name",
@@ -633,11 +685,13 @@
   {
     "Id": 27,
     "Quantity": 10,
+    "Price": 21.99,
     "Name": "Boston",
     "Description": "The debut studio album by American rock band Boston.",
     "Artist": "Boston",
     "Genre": "Hard Rock",
     "ReleaseDate": "1976-08-25",
+    "ImageUrl": "images/records/boston.jpg",
     "TrackList": [
       "More Than a Feeling",
       "Peace of Mind",
@@ -652,11 +706,13 @@
   {
     "Id": 28,
     "Quantity": 10,
+    "Price": 18.99,
     "Name": "Hybrid Theory",
     "Description": "The debut studio album by American rock band Linkin Park.",
     "Artist": "Linkin Park",
     "Genre": "Nu Metal, Rap Rock",
     "ReleaseDate": "2000-10-24",
+    "ImageUrl": "images/records/hybrid-theory.jpg",
     "TrackList": [
       "Papercut",
       "One Step Closer",
@@ -675,11 +731,13 @@
   {
     "Id": 29,
     "Quantity": 10,
+    "Price": 22.99,
     "Name": "Legend",
     "Description": "A compilation album by Bob Marley and the Wailers.",
     "Artist": "Bob Marley and the Wailers",
     "Genre": "Reggae",
     "ReleaseDate": "1984-05-08",
+    "ImageUrl": "images/records/legend.jpg",
     "TrackList": [
       "Is This Love",
       "No Woman, No Cry",
@@ -702,11 +760,13 @@
   {
     "Id": 30,
     "Quantity": 10,
+    "Price": 25.99,
     "Name": "Metallica (The Black Album)",
     "Description": "The fifth studio album by American heavy metal band Metallica.",
     "Artist": "Metallica",
     "Genre": "Heavy Metal",
     "ReleaseDate": "1991-08-12",
+    "ImageUrl": "images/records/black-album.jpg",
     "TrackList": [
       "Enter Sandman",
       "Sad but True",
